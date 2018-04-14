@@ -1,0 +1,10 @@
+{
+  "manifest_version": 2,
+  "version": "0.0.1",
+  "name": "Fullscreen zen",
+  "description": "A fullscreen zen-mode for your browser",
+  "author": "alex-griffin",
+  "chrome_url_overrides": {
+    "newtab": "src/index.html"
+  }
+}
