@@ -6,11 +6,11 @@
   "author": "alex-griffin",
   "permissions": ["tabs"],
   "chrome_url_overrides": {
-    "newtab": "src/index.html"
+    "newtab": "./newtab/index.html"
   },
   "background": {
     "scripts": [
-      "./background/index.html"
+      "./background/index.js"
     ]
   },
   "browser_action": {
