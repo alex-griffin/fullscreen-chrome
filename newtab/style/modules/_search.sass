@@ -1,0 +1,21 @@
+.search
+  padding: 4px
+  position: relative
+  border-bottom: 3px solid $text
+  width: 50%
+  input
+    background-color: transparent
+    color: $text
+    width: 100%
+  &::before, &::after
+    content: ""
+    display: block
+    position: absolute
+    height: 40%
+    background-color: $text
+    width: 3px
+    bottom: 0
+  &::before
+    left: 0
+  &::after
+    right: 0
