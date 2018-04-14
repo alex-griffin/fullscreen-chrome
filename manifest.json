@@ -10,7 +10,7 @@
   },
   "background": {
     "scripts": [
-      "./src/background.js"
+      "./background/index.html"
     ]
   },
   "browser_action": {
