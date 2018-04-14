@@ -8,9 +8,25 @@
 body
   background-color: $bg
   color: rgba(#fff, 0.85)
+  overflow: hidden
   // temp to make sure my eyes don't bleed
 
 #main-container
   width: 90%
   max-width: 720px
-  margin: 32px auto
+  height: 100vh
+  margin: 0 auto
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-direction: column
+  #date-container
+    font-size: 32px
+    position: absolute
+    top: 0
+    margin: 0 auto
+    opacity: 0.4
+    padding: 8px
+
+::selection
+  background-color: rgba($text, 0.1s)

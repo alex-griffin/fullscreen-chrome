@@ -7,4 +7,16 @@
   })
 
   searchbar.autofocus = true
+
+  const getTime = () => {
+    const dateContainer = document.getElementById("date-container")
+    const date = new Date()
+    let h = date.getHours()
+    h -= (h > 12 ? h - 10 : 0)
+    const m = date.getMinutes()
+    dateContainer.innerHTML = h + ":" + m
+    setTimeout(getTime, 500);
+  }
+
+  getTime()
 })()
