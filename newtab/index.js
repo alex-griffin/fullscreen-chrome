@@ -1,14 +1,38 @@
 (() => {
+
+  const isMathExpression = (str) => {
+    try {
+      let result = math.eval(str)
+      return math.format(result, 6)
+    } catch {
+      return false
+    }
+  }
+
   const searchbar = document.getElementById("searchbar")
-  document.getElementById("searchbar").addEventListener("keydown", () => {
+  searchbar.addEventListener("keydown", (e) => {
+    const value = e.target.value
     if (event.keyCode == 13 || event.which == 13) {
-      const value = e.target.value
-      if(value.match(^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$) {
-        location = value
+      if(value.match(/^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/)) {
+        window.location.href =  "https://www." + value
       } else {
-        location = 'http://www.google.com/search?q=' + encodeURIComponent(value)
+        window.location.href = 'http://www.google.com/search?q=' + encodeURIComponent(value)
       }
     }
+  })
+
+  searchbar.addEventListener("keyup", (e) => {
+    const value = e.target.value
+    const output = document.getElementById("output")
+    let result = isMathExpression(value)
+    console.log(result);
+    if((typeof result === "number" || typeof result === "string") && (result != "undefined" && result != "function") ) {
+      output.innerHTML = result
+    } else {
+      output.innerHTML = "&#8194;"
+    }
+    // if(output.innerHTML == "") }
+
   })
 
   searchbar.autofocus = true
